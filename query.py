@@ -5,7 +5,7 @@ import locale
 # set bahasa waktu lokal indonesia
 locale.setlocale(locale.LC_TIME, 'id_ID')
 
-class Pelajar:
+class Siswa:
     def __init__(self, db):
         self.db = db
     
@@ -19,7 +19,7 @@ class Pelajar:
             except EmailNotValidError as e:
                 print(str(e))
 
-    def jenjang_pendidikan(self) :
+    def kelas(self) :
         while True :
             print("\n=== Jenjang Pendidikan ===")
             print("1. SD")
@@ -54,7 +54,7 @@ class Pelajar:
         Email = self.check_email()
         Nomor = "0" + str(int(input("Masukan Nomor\t: ")))
 
-        Jenjang_pendidikan = self.Jenjang_pendidikan()
+        Jenjang_pendidikan = self.kelas()
         Jenis_kelamin = self.jenis_kelamin()
         Password = str(input("Masukan Password: "))
         x = PrettyTable()
@@ -108,7 +108,7 @@ class Pelajar:
         query = """SELECT * FROM pelajar"""
         self.db.selectValuepretty(query, data=None)
 
-class Pengajar:
+class Guru:
     def __init__(self, db):
         self.db = db
 
@@ -142,6 +142,50 @@ class Pengajar:
                 return "Perempuan"
             else :
                 print("pilihan tidak tersedia harap pilih yang benar")
+
+    def bidang_mapel(self):
+        while True :
+            print("\n=== Bidang Mapel ===")
+            print("1. Matematika")
+            print("2. Bahasa Indonesia")
+            print("3. Bahasa Inggris")
+            print("4. Ilmu Pengetahuan Alam")
+            print("5. Fisika")
+            print("6. Kimia")
+            print("7. Biologi")
+            print("8. Geografi")
+            print("9. Ekonomi")
+            print("10. Sosiologi")
+            print("11. Sejarah")
+            print("12. Tes Potensi Skolastik")
+            pilih = int(input("Pilih Bidang Mapel\t: "))
+            if pilih == 1 :
+                return "Matematika"
+            elif pilih == 2 :
+                return "Bahasa Indonesia"
+            elif pilih == 3 :
+                return "Bahasa Inggris"
+            elif pilih == 4 :
+                return "Ilmu Pengetahuan Alam"
+            elif pilih == 5 :
+                return "Fisika"
+            elif pilih == 6 :
+                return "Kimia"
+            elif pilih == 7 :
+                return "Biologi"
+            elif pilih == 8 :
+                return "Geografi"
+            elif pilih == 9 :
+                return "Ekonomi"
+            elif pilih == 10 :
+                return "Sosiologi"
+            elif pilih == 11 :
+                return "Sejarah"
+            elif pilih == 12 :
+                return "Tes Potensi Skolastik"
+            else :
+                print("pilihan tidak tersedia harap pilih yang benar")
+
 
     def insert_pengajar(self):
         print("===== Input Pengajar =====")
@@ -203,7 +247,7 @@ class Pengajar:
         query = """SELECT * FROM pengajar"""
         self.db.selectValuepretty(query, data=None)
 
-class Admin:
+class Pegawai:
     def __init__(self, db):
         self.db = db
 
