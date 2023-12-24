@@ -2,13 +2,13 @@ import os
 from connector import database
 from createtable import created_table
 from sampledata import created_data
-from query import Pelajar, Pengajar, Admin
-db = database
+# from query import Pelajar, Pengajar, Admin
+db = database()
 db.connect()
 created_table(db)
-pel = Pelajar(db)
-peng = Pengajar(db)
-adm = Admin(db)
+# pel = Pelajar(db)
+# peng = Pengajar(db)
+# adm = Admin(db)
 
 
 while True :
@@ -39,7 +39,7 @@ while True :
 
             pilih = int(input("Pilih Menu : "))
             if pilih == 1:
-                pel.insert_pelajar()
+                pass
             elif pilih == 2:
                 pass
             else :
