@@ -130,15 +130,15 @@ paket_belajar ='''CREATE TABLE IF NOT EXISTS Paket_belajar(
 '''
 
 def created_table(db) :
+    db.create(paket_belajar)
     db.create(siswa)
     db.create(guru)
     db.create(pegawai)
     db.create(absen_pegawai)
     db.create(transaksi)
-    db.create(absen_siswa)
     db.create(jadwal)
     db.create(ruangan)
+    db.create(absen_siswa)
     db.create(absen_guru)
     db.create(jadwal_pelayanan)
-    db.create(paket_belajar)
     print("Tabel berhasil dibuat")
